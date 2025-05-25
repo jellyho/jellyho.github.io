@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+<head>
+  <title>ABOUT ME : jellyho</title>
+  {% include 'blog/head.html' %}
+  <link rel="stylesheet" href="{% static 'single_pages/css/stylesheets.css' %}?c" media="screen">
+  <meta name="description" content="Who am I?">
+  <meta property="og:title" content="ABOUT ME : Hokyun Im">
+  <meta property="og:description" content="Who am I?">
+</head>
+<body class="bg-jellyho">
+  {% include 'blog/navbar.html' %}
+  
+  <div class="container text-light mt-5">
+    <h1 class="text-center" style="font-family: 'Staatliches', cursive;">HI~ I'm Hokyun Im.</h1>
+    <img class="mx-auto my-3" style="width:200px;max-width:100%;object-fit: cover; border-radius: 50%; display : block;height:200px;" src={% static 'single_pages/me.jpg' %}>
+    <h1>Hi!</h1>
+    <p>I am majoring in electrical and electronic engineering at Yonsei University.</p>
+    <p>Currently, I'll work as an intern at  <a href="https://youngwoon.github.io/">RLLAB</a> under the guidance of Professor Youngwoon Lee!</p>
+    <p>My interest is the intersection of robotics and AI. I want to study how to use AI to make robots more intelligent and interactive in the real world. Especially interested in decision making, reasoning, planning for robots in online environments </p>
+    <h3 style="font-family: 'Do Hyeon', sans-serif;">My Works</h3>
+    <hr color="white"/>
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      
+    {% for port in ports %} 
+    <tr onmouseout="{{ port.title }}_stop()" onmouseover="{{ port.title }}_start()"  class="bg-jellyho">
+        <td style="padding:10px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='{{ port.title }}'>
+              <img src='{{ port.thumb1.url }}' width="160">
+            </div>
+            <img src='{{ port.thumb2.url }}' width="160">
+          </div>
+          <script type="text/javascript">
+            function {{ port.title }}_start() {
+              document.getElementById('{{ port.title }}').style.opacity = "1";
+            }
+
+            function {{ port.title }}_stop() {
+              document.getElementById('{{ port.title }}').style.opacity = "0";
+            }
+            {{ port.title }}_stop()
+          </script>
+        </td>
+        <td style="padding:10px;width:75%;vertical-align:middle">
+        <p style="font-family: 'Noto Sans KR', sans-serif;">{{ port.get_content_markdown | safe }}</p>
+        </td>
+    </tr>
+    {% endfor %}
+      
+    </tbody></table>
+    <p>Previously, I worked as a research intern at MLCS Lab under the Prof. Jongeun Choi,  <a href="https://clvrai.com">CLVR Lab</a> under the Prof. <a href="https://clvrai.com/web_lim/">Joseph J. Lim.</a></p>
+    <hr color="white"/>
+    <p>Former president of <a href="https://www.yonseidrone.com">Yonsei Drone 4th</a></p>
+    Yonsei Artifitial Intelligence(<a href="https://github.com/yonsei-YAI">YAI</a>) 11th</p>
+  </div>
+  
+  <div class="">
+    {% include 'blog/footer.html' %}
+  </div>
+</body>
+</html>

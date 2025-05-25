@@ -34,7 +34,74 @@
     <p>My interest is the intersection of robotics and AI. I want to study how to use AI to make robots more intelligent and interactive in the real world. Especially interested in decision making, reasoning, using foundational models.</p>
     <h3 style="font-family: 'Do Hyeon', sans-serif;">My Works</h3>
     <hr color="white"/>
-    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <h3 style="font-family: 'Do Hyeon', sans-serif;">My Works</h3>
+<hr color="white"/>
+
+<style>
+  .paper-card {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .paper-card:hover {
+    transform: scale(1.05);
+    z-index: 10;
+  }
+
+  .paper-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .paper-info {
+    padding: 12px;
+    color: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  .paper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+</style>
+
+<div class="paper-grid">
+  <div class="paper-card" onmouseover="this.querySelector('video').play()" onmouseout="this.querySelector('video').pause()">
+    <div class="paper-video">
+      <video muted loop poster="static/videos/test.png">
+        <source src="static/videos/test.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="paper-info">
+      <h5>D</h5>
+      <p>HI</p>
+    </div>
+  </div>
+
+  <div class="paper-card" onmouseover="this.querySelector('video').play()" onmouseout="this.querySelector('video').pause()">
+    <div class="paper-video">
+      <video muted loop poster="static/videos/test.png">
+        <source src="static/videos/test.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="paper-info">
+      <h5>DD</h5>
+      <p>HI </p>
+    </div>
+  </div>
+</div>
+
+    <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody> -->
       
     <!-- {% for port in ports %} 
     <tr onmouseout="{{ port.title }}_stop()" onmouseover="{{ port.title }}_start()"  class="bg-jellyho">

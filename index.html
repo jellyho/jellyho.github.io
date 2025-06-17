@@ -1,190 +1,136 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <title>ABOUT ME : jellyho</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:type" content="website"> 
-  <meta property="og:image" content="static/title.png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR&family=Staatliches&family=Style+Script&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="static/jellyho_color.css" media="screen">
-  <link rel="stylesheet" href="static/blog-post.css" media="screen">
-  <link rel="shortcut icon" href="static/favicon.ico">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/726bbd6862.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/mathtex-script-type.min.js" defer></script>
-  <link rel="stylesheet" href="static/stylesheets.css" media="screen">
-  <meta name="description" content="Who am I?">
-  <meta property="og:title" content="ABOUT ME : Hokyun Im">
-  <meta property="og:description" content="Who am I?">
+    <title>ABOUT ME : jellyho</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="static/title.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR&family=Staatliches&family=Style+Script&display=swap" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="static/favicon.ico">
+    <meta name="description" content="Who am I?">
+    <meta property="og:title" content="ABOUT ME : Hokyun Im">
+    <meta property="og:description" content="Who am I?">
+
+    <style>
+        /* Apply custom fonts to Tailwind's base classes */
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #1a202c; /* A dark background similar to the vibe */
+            color: #e2e8f0; /* A light text color for readability */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Do Hyeon', sans-serif;
+        }
+        .font-staatliches {
+            font-family: 'Staatliches', cursive;
+        }
+        .font-raleway-like { /* Using a fallback stylish font */
+            font-family: 'Staatliches', cursive;
+        }
+        /* Style for the video poster to not be too bright */
+        video[poster] {
+            filter: brightness(0.9);
+        }
+    </style>
 </head>
-<body class="bg-jellyho">  
-  <div class="container text-light mt-5">
-    <h1 class="text-center" style="font-family: 'Staatliches', cursive;">HI~ I'm Hokyun Im.</h1>
-    <img class="mx-auto my-3" style="width:200px;max-width:100%;object-fit: cover; border-radius: 50%; display : block;height:200px;" src="static/me.jpg">
-    <h1>Hi!</h1>
-    <p>I am majoring in Artificial Intelligence at Yonsei University, under the guidance of Professor <a href="https://youngwoon.github.io/">Youngwoon Lee.</a></p>
-    <p>My interest is the intersection of robotics and AI. I want to study how to use AI to make robots more intelligent and interactive in the real world. Especially interested in decision making, reasoning, using foundational models.</p>
-    <h3 style="font-family: 'Do Hyeon', sans-serif;">My Works</h3>
-    <hr color="white"/>
+<body class="bg-gray-900 text-gray-200">
 
-<h3 style="font-family: 'Do Hyeon', sans-serif;">My Works</h3>
-<hr color="white"/>
-
-<style>
-  .pub-list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin-top: 20px;
-  }
-
-  .pub-item {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 12px;
-    padding: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .pub-item:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
-  }
-
-  .pub-thumb {
-    width: 200px;
-    height: 120px;
-    flex-shrink: 0;
-    overflow: hidden;
-    border-radius: 8px;
-  }
-
-  .pub-thumb video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .pub-info {
-    color: white;
-    font-family: 'Noto Sans KR', sans-serif;
-    flex-grow: 1;
-  }
-
-  .pub-title {
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-bottom: 5px;
-  }
-
-  .pub-authors {
-    font-size: 0.95em;
-    color: #ccc;
-    margin-bottom: 5px;
-  }
-
-  @media (max-width: 768px) {
-    .pub-item {
-      flex-direction: column;
-      align-items: center;
-    }
-    .pub-thumb {
-      width: 100%;
-      height: auto;
-    }
-  }
-</style>
-
-<div class="pub-list">
-  <!-- Publication 1 -->
-  <div class="pub-item" onmouseover="this.querySelector('video').play()" onmouseout="this.querySelector('video').pause()">
-    <div class="pub-thumb">
-      <video muted loop playsinline poster="static/videos/test.png">
-        <source src="static/videos/test.mp4" type="video/mp4">
-      </video>
+<div class="max-w-4xl w-full px-4 pt-8 flex flex-col items-start mx-auto">
+    
+    <div class="grid grid-cols-[150px_1fr] gap-x-6 w-full mb-8">
+        <img class="col-start-1 row-span-2 self-stretch rounded-lg object-cover w-full h-full" src="static/me.jpg" alt="Hokyun Im Profile Picture">
+        
+        <div class="col-start-2 leading-none">
+            <h1 class="text-4xl inline-block pr-2 font-staatliches">Hokyun Im</h1>
+        </div>
+        
+        <div class="mt-3 col-start-2">
+            <p>I am majoring in Artificial Intelligence at Yonsei University, under the guidance of Professor <a href="https://youngwoon.github.io/" class="text-sky-400 hover:underline">Youngwoon Lee.</a></p>
+            <p class="mt-2">My interest is the intersection of robotics and AI. I want to study how to use AI to make robots more intelligent and interactive in the real world. Especially interested in decision making, reasoning, using foundational models.</p>
+            <p class="mt-2">I received my Bachelor's degree from the School of Electrical and Electronic Engineering at Yonsei University.</p>
+            <p class="mt-2">Previously, I worked as a research intern at MLCS Lab under the Prof. Jongeun Choi, <a href="https://clvrai.com" class="text-sky-400 hover:underline">CLVR Lab</a> under the Prof. <a href="https://clvrai.com/web_lim/" class="text-sky-400 hover:underline">Joseph J. Lim.</a></p>
+        </div>
     </div>
-    <div class="pub-info">
-      <div class="pub-title">test</div>
-      <div class="pub-authors">Hokyun Im, Collaborator1, Collaborator2</div>
-      <div>Description for test paper goes here.</div>
-    </div>
-  </div>
 
-  <!-- Publication 2 -->
-  <div class="pub-item" onmouseover="this.querySelector('video').play()" onmouseout="this.querySelector('video').pause()">
-    <div class="pub-thumb">
-      <video muted loop playsinline poster="static/videos/test.png">
-        <source src="static/videos/test.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="pub-info">
-      <div class="pub-title">test</div>
-      <div class="pub-authors">Hokyun Im, Collaborator A, Prof. B</div>
-      <div>This is another test description to showcase the layout.</div>
-    </div>
-  </div>
-
-  <!-- Publication 3 -->
-  <div class="pub-item" onmouseover="this.querySelector('video').play()" onmouseout="this.querySelector('video').pause()">
-    <div class="pub-thumb">
-      <video muted loop playsinline poster="static/videos/test.png">
-        <source src="static/videos/test.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="pub-info">
-      <div class="pub-title">test</div>
-      <div class="pub-authors">Hokyun Im, Collaborator X, Collaborator Y</div>
-      <div>Yet another test entry to check hover effect and layout scaling.</div>
-    </div>
-  </div>
-</div>
-
-
-    <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody> -->
-      
-    <!-- {% for port in ports %} 
-    <tr onmouseout="{{ port.title }}_stop()" onmouseover="{{ port.title }}_start()"  class="bg-jellyho">
-        <td style="padding:10px;width:25%;vertical-align:middle">
-          <div class="one">
-            <div class="two" id='{{ port.title }}'>
-              <img src='{{ port.thumb1.url }}' width="160">
+    <h2 class="text-2xl mt-8 mb-4">My Works</h2>
+    <div class="grid md:gap-y-8 gap-y-12 grid-cols-[minmax(0,_200px)_1fr] w-full">
+        
+        <div class="contents">
+            <div 
+                class="transition-transform self-center justify-self-center w-full"
+                onmouseover="this.querySelector('video').play()" 
+                onmouseout="this.querySelector('video').pause()">
+                <div class="rounded-lg overflow-hidden">
+                    <video muted loop playsinline poster="static/videos/test.png" class="w-full">
+                        <source src="static/videos/test.mp4" type="video/mp4">
+                    </video>
+                </div>
             </div>
-            <img src='{{ port.thumb2.url }}' width="160">
-          </div>
-          <script type="text/javascript">
-            function {{ port.title }}_start() {
-              document.getElementById('{{ port.title }}').style.opacity = "1";
-            }
+            <div class="md:pl-6 pt-2 md:pt-0">
+                <div class="text-xl text-sky-400 font-bold font-raleway-like">test</div>
+                <p class="text-md">
+                    <span class="font-bold">Hokyun Im</span>, <span>Collaborator1</span>, <span>Collaborator2</span>
+                </p>
+                <p class="text-md italic text-gray-400">Description for test paper goes here.</p>
+            </div>
+        </div>
 
-            function {{ port.title }}_stop() {
-              document.getElementById('{{ port.title }}').style.opacity = "0";
-            }
-            {{ port.title }}_stop()
-          </script>
-        </td>
-        <td style="padding:10px;width:75%;vertical-align:middle">
-        <p style="font-family: 'Noto Sans KR', sans-serif;">{{ port.get_content_markdown | safe }}</p>
-        </td>
-    </tr>
-    {% endfor %} -->
-      
-    </tbody></table>
-    <p>I received my Bachelor's degree from the School of Electrical and Electronic Engineering at Yonsei University.</p>
-    <p>Previously, I worked as a research intern at MLCS Lab under the Prof. Jongeun Choi,  <a href="https://clvrai.com">CLVR Lab</a> under the Prof. <a href="https://clvrai.com/web_lim/">Joseph J. Lim.</a></p>
-    <hr color="white"/>
-    <p>Former president of <a href="https://www.yonseidrone.com">Yonsei Drone 4th</a></p>
-    Yonsei Artifitial Intelligence(<a href="https://github.com/yonsei-YAI">YAI</a>) 11th</p>
-  </div>
+        <div class="contents">
+            <div 
+                class="transition-transform self-center justify-self-center w-full"
+                onmouseover="this.querySelector('video').play()" 
+                onmouseout="this.querySelector('video').pause()">
+                <div class="rounded-lg overflow-hidden">
+                    <video muted loop playsinline poster="static/videos/test.png" class="w-full">
+                        <source src="static/videos/test.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="md:pl-6 pt-2 md:pt-0">
+                <div class="text-xl text-sky-400 font-bold font-raleway-like">test</div>
+                <p class="text-md">
+                    <span class="font-bold">Hokyun Im</span>, <span>Collaborator A</span>, <span>Prof. B</span>
+                </p>
+                <p class="text-md italic text-gray-400">This is another test description to showcase the layout.</p>
+            </div>
+        </div>
+
+        <div class="contents">
+            <div 
+                class="transition-transform self-center justify-self-center w-full"
+                onmouseover="this.querySelector('video').play()" 
+                onmouseout="this.querySelector('video').pause()">
+                <div class="rounded-lg overflow-hidden">
+                    <video muted loop playsinline poster="static/videos/test.png" class="w-full">
+                        <source src="static/videos/test.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="md:pl-6 pt-2 md:pt-0">
+                <div class="text-xl text-sky-400 font-bold font-raleway-like">test</div>
+                <p class="text-md">
+                    <span class="font-bold">Hokyun Im</span>, <span>Collaborator X</span>, <span>Collaborator Y</span>
+                </p>
+                <p class="text-md italic text-gray-400">Yet another test entry to check hover effect and layout scaling.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <h2 class="text-2xl mt-12 mb-4">Activities</h2>
+    <div class="w-full text-gray-300">
+        <p>Former president of <a href="https://www.yonseidrone.com" class="text-sky-400 hover:underline">Yonsei Drone 4th</a></p>
+        <p>Yonsei Artificial Intelligence (<a href="https://github.com/yonsei-YAI" class="text-sky-400 hover:underline">YAI</a>) 11th</p>
+    </div>
+
+    <div class="mb-32"></div> </div>
+
 </body>
 </html>

@@ -63,10 +63,7 @@
     <div class="grid md:gap-y-8 gap-y-12 grid-cols-[minmax(0,_200px)_1fr] w-full">
         
         <div class="contents">
-            <div 
-                class="transition-transform self-center justify-self-center w-full"
-                onmouseover="this.querySelector('video').play()" 
-                onmouseout="this.querySelector('video').pause()">
+            <div class="transition-transform self-center justify-self-center w-full video-hover-container">
                 <div class="rounded-lg overflow-hidden">
                     <video muted loop playsinline poster="static/videos/test.png" class="w-full">
                         <source src="static/videos/test.mp4" type="video/mp4">
@@ -82,55 +79,79 @@
             </div>
         </div>
 
-        <div class="contents">
-            <div 
-                class="transition-transform self-center justify-self-center w-full"
-                onmouseover="this.querySelector('video').play()" 
-                onmouseout="this.querySelector('video').pause()">
-                <div class="rounded-lg overflow-hidden">
-                    <video muted loop playsinline poster="static/videos/test.png" class="w-full">
-                        <source src="static/videos/test.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-            <div class="md:pl-6 pt-2 md:pt-0">
-                <div class="text-xl text-sky-400 font-bold font-raleway-like">test</div>
-                <p class="text-md">
-                    <span class="font-bold">Hokyun Im</span>, <span>Collaborator A</span>, <span>Prof. B</span>
-                </p>
-                <p class="text-md italic text-gray-400">This is another test description to showcase the layout.</p>
-            </div>
         </div>
 
-        <div class="contents">
-            <div 
-                class="transition-transform self-center justify-self-center w-full"
-                onmouseover="this.querySelector('video').play()" 
-                onmouseout="this.querySelector('video').pause()">
-                <div class="rounded-lg overflow-hidden">
-                    <video muted loop playsinline poster="static/videos/test.png" class="w-full">
-                        <source src="static/videos/test.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-            <div class="md:pl-6 pt-2 md:pt-0">
-                <div class="text-xl text-sky-400 font-bold font-raleway-like">test</div>
-                <p class="text-md">
-                    <span class="font-bold">Hokyun Im</span>, <span>Collaborator X</span>, <span>Collaborator Y</span>
-                </p>
-                <p class="text-md italic text-gray-400">Yet another test entry to check hover effect and layout scaling.</p>
-            </div>
-        </div>
-
+    <h2 class="text-2xl mt-12 mb-2">Other Projects</h2>
+    
+    <div class="flex items-center w-full mb-4 mt-2">
+        <div class="grow border-t border-gray-600 border-dotted"></div>
+        <div class="shrink px-2 text-sm text-gray-400">University</div>
+        <div class="grow border-t border-gray-600 border-dotted"></div>
     </div>
+    
+    <div class="w-full flex flex-wrap gap-6">
+        
+        <div class="flex flex-[1_1_300px]">
+            <a href="https://www.yonseidrone.com" class="self-center">
+                <div class="w-32 h-32 mr-4 rounded-lg overflow-hidden bg-gray-700 flex justify-center items-center">
+                    <img src="https://placehold.co/128x128/4A5568/E2E8F0?text=Yonsei+Drone" alt="Yonsei Drone Project">
+                </div>
+            </a>
+            <div class="flex flex-col shrink">
+                <div>
+                    <a href="https://www.yonseidrone.com" class="text-xl font-semibold font-raleway-like text-sky-400 hover:underline">Yonsei Drone</a>
+                </div>
+                <p class="text-gray-300">A student-led drone research society. I served as the 4th president.</p>
+            </div>
+        </div>
 
-    <h2 class="text-2xl mt-12 mb-4">Activities</h2>
-    <div class="w-full text-gray-300">
-        <p>Former president of <a href="https://www.yonseidrone.com" class="text-sky-400 hover:underline">Yonsei Drone 4th</a></p>
-        <p>Yonsei Artificial Intelligence (<a href="https://github.com/yonsei-YAI" class="text-sky-400 hover:underline">YAI</a>) 11th</p>
+        <div class="flex flex-[1_1_300px]">
+            <a href="https://github.com/yonsei-YAI" class="self-center">
+                <div class="w-32 h-32 mr-4 rounded-lg overflow-hidden bg-gray-700 flex justify-center items-center">
+                    <img src="https://placehold.co/128x128/4A5568/E2E8F0?text=YAI" alt="YAI Project">
+                </div>
+            </a>
+            <div class="flex flex-col shrink">
+                <div>
+                    <a href="https://github.com/yonsei-YAI" class="text-xl font-semibold font-raleway-like text-sky-400 hover:underline">YAI (Yonsei Artificial Intelligence)</a>
+                </div>
+                <p class="text-gray-300">The leading academic society for AI at Yonsei University. I was a member of the 11th cohort.</p>
+            </div>
+        </div>
+        
     </div>
 
     <div class="mb-32"></div> </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 'video-hover-container' 클래스를 가진 모든 요소를 선택합니다.
+        const videoContainers = document.querySelectorAll('.video-hover-container');
+
+        videoContainers.forEach(container => {
+            const video = container.querySelector('video');
+            if (video) {
+                // 마우스가 요소에 들어왔을 때
+                container.addEventListener('mouseenter', () => {
+                    // video.play()는 Promise를 반환하므로, 에러 발생 시 처리해줍니다.
+                    const playPromise = video.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(error => {
+                            // 브라우저 정책에 의해 자동 재생이 막혔을 경우 콘솔에 로그를 남깁니다.
+                            console.log("Video autoplay was prevented. Error: ", error);
+                        });
+                    }
+                });
+
+                // 마우스가 요소를 떠났을 때
+                container.addEventListener('mouseleave', () => {
+                    video.pause();
+                    video.currentTime = 0; // 비디오를 처음으로 되돌립니다.
+                });
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

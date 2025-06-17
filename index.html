@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <title>ABOUT ME : jellyho</title>
+    <title>ABOUT ME : Hokyun Im</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:type" content="website">
@@ -40,9 +40,9 @@
         }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-200">
+<body class="bg-gray-900 text-gray-200" data-sveltekit-preload-data="hover">
 
-<div class="max-w-4xl w-full px-4 pt-8 flex flex-col items-start mx-auto">
+<div class="max-w-6xl w-full px-4 pt-8 flex flex-col items-start mx-auto">
     
     <div class="grid grid-cols-[150px_1fr] gap-x-6 w-full mb-8">
         <img class="col-start-1 row-span-2 self-stretch rounded-lg object-cover w-full h-full" src="static/me.jpg" alt="Hokyun Im Profile Picture">
@@ -59,7 +59,7 @@
         </div>
     </div>
 
-    <h2 class="text-2xl mt-8 mb-4">My Works</h2>
+    <h2 class="text-2xl mt-8 mb-4">Publications</h2>
     <div class="grid md:gap-y-8 gap-y-12 grid-cols-[minmax(0,_200px)_1fr] w-full">
         
         <div class="contents">
@@ -81,7 +81,9 @@
 
         </div>
 
-    <h2 class="text-2xl mt-12 mb-2">Other Projects</h2>
+    <h2 class="text-2xl mt-12 mb-2">Projects</h2>
+
+    <h2 class="text-2xl mt-12 mb-2">Other Activities</h2>
     
     <div class="flex items-center w-full mb-4 mt-2">
         <div class="grow border-t border-gray-600 border-dotted"></div>
@@ -122,36 +124,6 @@
     </div>
 
     <div class="mb-32"></div> </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // 'video-hover-container' 클래스를 가진 모든 요소를 선택합니다.
-        const videoContainers = document.querySelectorAll('.video-hover-container');
-
-        videoContainers.forEach(container => {
-            const video = container.querySelector('video');
-            if (video) {
-                // 마우스가 요소에 들어왔을 때
-                container.addEventListener('mouseenter', () => {
-                    // video.play()는 Promise를 반환하므로, 에러 발생 시 처리해줍니다.
-                    const playPromise = video.play();
-                    if (playPromise !== undefined) {
-                        playPromise.catch(error => {
-                            // 브라우저 정책에 의해 자동 재생이 막혔을 경우 콘솔에 로그를 남깁니다.
-                            console.log("Video autoplay was prevented. Error: ", error);
-                        });
-                    }
-                });
-
-                // 마우스가 요소를 떠났을 때
-                container.addEventListener('mouseleave', () => {
-                    video.pause();
-                    video.currentTime = 0; // 비디오를 처음으로 되돌립니다.
-                });
-            }
-        });
-    });
-</script>
 
 </body>
 </html>

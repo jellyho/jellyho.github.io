@@ -94,13 +94,13 @@
 
     <h2 class="text-2xl mt-12 mb-2">Projects</h2>
 
-    <div class="group relative w-full rounded-2xl overflow-hidden bg-white/5 shadow-md transition duration-300 [perspective:1000px]" id="interactive-card">
-        <div class="pointer-events-none absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition duration-300" id="glow-layer"></div>
-        <div class="grid md:gap-y-8 gap-y-12 grid-cols-[minmax(0,_200px)_1fr] relative z-10 px-4 py-1 transition-transform duration-300 will-change-transform" id="card-inner">
+    <div class="group relative w-full rounded-2xl overflow-hidden bg-white/5 shadow-md transition duration-300 [perspective:1000px] interactive-card">
+        <div class="pointer-events-none absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition duration-300 glow-layer"></div>
+        <div class="grid md:gap-y-8 gap-y-12 grid-cols-[minmax(0,_200px)_1fr] relative z-10 px-4 py-1 transition-transform duration-300 will-change-transform card-inner">
             <div class="self-center justify-self-center w-full video-hover-container relative">
                 <div class="rounded-lg overflow-hidden relative w-full">
-                    <img src="static/videos/krac2023.png" class="w-full h-auto transition-opacity duration-500 base-image">
-                    <img src="static/videos/krac2023.gif" class="w-full h-auto absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 hover-image">
+                    <img src="static/videos/crossformer.png" class="w-full h-auto transition-opacity duration-500 base-image">
+                    <img src="static/videos/crossformer.gif" class="w-full h-auto absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 hover-image">
                 </div>
             </div>
             <div class="md:pl-6 pt-2 md:pt-0">
@@ -117,9 +117,11 @@
         </div>
     </div>
 
-    <div class="group relative w-full rounded-2xl overflow-hidden bg-white/5 shadow-md transition duration-300 [perspective:1000px]" id="interactive-card">
-        <div class="pointer-events-none absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition duration-300" id="glow-layer"></div>
-        <div class="grid md:gap-y-8 gap-y-12 grid-cols-[minmax(0,_200px)_1fr] relative z-10 px-4 py-1 transition-transform duration-300 will-change-transform" id="card-inner">
+    <div class="my-2"></div>
+
+    <div class="group relative w-full rounded-2xl overflow-hidden bg-white/5 shadow-md transition duration-300 [perspective:1000px] interactive-card">
+        <div class="pointer-events-none absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition duration-300 glow-layer"></div>
+        <div class="grid md:gap-y-8 gap-y-12 grid-cols-[minmax(0,_200px)_1fr] relative z-10 px-4 py-1 transition-transform duration-300 will-change-transform card-inner">
             <div class="self-center justify-self-center w-full video-hover-container relative">
                 <div class="rounded-lg overflow-hidden relative w-full">
                     <img src="static/videos/krac2023.png" class="w-full h-auto transition-opacity duration-500 base-image">
@@ -238,23 +240,29 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const card = document.getElementById("interactive-card");
-  const inner = document.getElementById("card-inner");
-  const glow = document.getElementById("glow-layer");
-  card.addEventListener("mousemove", (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = (y - centerY) / rect.height * 5;
-    const rotateY = -(x - centerX) / rect.width * 5
-    inner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    glow.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(0, 255, 255, 0.15), transparent 80%)`;
-  });
-  card.addEventListener("mouseleave", () => {
-    inner.style.transform = "rotateX(0deg) rotateY(0deg)";
-    glow.style.background = "none";
+  const cards = document.querySelectorAll(".interactive-card");
+
+  cards.forEach(card => {
+    const inner = card.querySelector(".card-inner");
+    const glow = card.querySelector(".glow-layer");
+
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = (y - centerY) / rect.height * 5;
+      const rotateY = -(x - centerX) / rect.width * 5;
+
+      inner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      glow.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(0, 255, 255, 0.15), transparent 80%)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      inner.style.transform = "rotateX(0deg) rotateY(0deg)";
+      glow.style.background = "none";
+    });
   });
 });
 </script>

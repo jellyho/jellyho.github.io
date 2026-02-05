@@ -112,9 +112,7 @@
             box-shadow: 0 20px 40px rgba(8, 145, 178, 0.15);
         }
 
-        .glass-card:hover .hover-image {
-            opacity: 1 !important;
-        }
+        /* 기존 CSS 방식 호버 제거 -> Tailwind class로 대체됨 */
 
         .profile-image {
             position: relative;
@@ -167,13 +165,10 @@
         }
 
         .video-hover-container {
-            position: relative;
+            /* relative는 Tailwind 클래스로 이동하거나 여기서 유지 */
+            position: relative; 
             overflow: hidden;
             border-radius: 0.75rem;
-        }
-
-        .hover-image {
-            transition: opacity 0.5s ease;
         }
 
         .section-divider {
@@ -244,26 +239,19 @@
             .wave {
                 animation: none !important;
             }
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Animated Wave Background -->
-<div class="wave-animation">
+    <div class="wave-animation">
     <div class="wave wave1"></div>
     <div class="wave wave2"></div>
     <div class="wave wave3"></div>
 </div>
 
-<div class="max-w-6xl w-full px-6 pt-16 pb-32 flex flex-col items-start mx-auto">
+<div class="max-w-6xl w-full px-6 pt-16 pb-32 flex flex-col items-start mx-auto relative z-10">
     
-    <!-- Hero Section -->
     <div class="grid md:grid-cols-[240px_1fr] gap-8 w-full mb-12">
         <div class="profile-image rounded-xl overflow-hidden shadow-2xl">
             <img class="w-full h-full object-cover" src="./static/me.jpg" alt="Hokyun Im Profile Picture">
@@ -272,19 +260,21 @@
         <div class="flex flex-col justify-center gap-6">
             <div>
                 <h1 class="text-6xl font-bold mb-2 gradient-text">Hokyun Im</h1>
-                <!-- <p class="text-xl text-slate-600">AI Researcher • Roboticist</p> -->
+                <!-- <p class="text-lg font-medium text-slate-500">AI Researcher & Roboticist</p> -->
             </div>
             
             <div class="flex flex-col gap-4 text-slate-700 leading-relaxed">
-                <p>I am majoring in <span class="text-cyan-700 font-medium">Artificial Intelligence</span> at Yonsei University, under the guidance of Professor <a href="https://youngwoon.github.io/" class="link-hover text-cyan-700 hover:text-cyan-600">Youngwoon Lee</a>.</p>
-                <p>My interest lies at the intersection of <span class="text-amber-700 font-medium">robotics and AI</span>. I want to study how to use AI to make robots more intelligent and interactive in the real world, especially in <span class="text-orange-700 font-medium">decision making, reasoning, and using foundational models</span>.</p>
-                <p>I am currently doing a research internship at <span class="text-blue-700 font-medium">Microsoft Research Asia</span>.</p>
-                <p class="text-slate-600 text-sm">Previously: Research intern at MLCS Lab (Prof. Jongeun Choi) and <a href="https://clvrai.com" class="link-hover text-cyan-600 hover:text-cyan-500">CLVR Lab</a> (Prof. <a href="https://clvrai.com/web_lim/" class="link-hover text-cyan-600 hover:text-cyan-500">Joseph J. Lim</a>).</p>
+                <p>I am an MS/Ph.D student majoring in <span class="text-cyan-700 font-medium">Artificial Intelligence</span> at Yonsei University, advised by Prof. <a href="https://youngwoon.github.io/" class="link-hover text-cyan-700 hover:text-cyan-600">Youngwoon Lee</a>.</p>
+    
+                <p>My research focuses on the intersection of <span class="text-amber-700 font-medium">Robotics and AI</span>. I am particularly interested in building intelligent agents that can reason and make decisions in the real world by leveraging <span class="text-orange-700 font-medium">Foundation Models and Reinforcement Learning</span>.</p>
+    
+                <p class="text-slate-600 text-sm">
+                    Previously: Research intern at <span class="font-medium text-slate-700">Microsoft Research Asia (MSRA)</span>, MLCS Lab (Prof. Jongeun Choi), and <a href="https://clvrai.com" class="link-hover text-cyan-600 hover:text-cyan-500">CLVR Lab</a> (Prof. <a href="https://clvrai.com/web_lim/" class="link-hover text-cyan-600 hover:text-cyan-500">Joseph J. Lim</a>).
+                </p>
             </div>
         </div>
     </div>
     
-    <!-- Social Links -->
     <div class="flex flex-wrap gap-3 mb-16">
         <a href="https://github.com/jellyho" target="_blank" class="btn-modern flex items-center gap-2 px-4 py-2.5 bg-white/70 hover:bg-white text-slate-700 hover:text-slate-900 rounded-lg text-sm border border-slate-300 hover:border-cyan-500">
             <span class="flex items-center gap-2">
@@ -314,46 +304,46 @@
 
     <div class="section-divider"></div>
 
-    <!-- Publications Section -->
     <h2 class="text-4xl font-bold mb-8 gradient-text">Publications</h2>
     
     <div class="glass-card w-full rounded-2xl overflow-hidden mb-8 group">
         <div class="grid md:grid-cols-[180px_1fr] gap-6 p-6">
-            <div class="video-hover-container">
-                <img src="./static/videos/TwinVLA_thmb.png" class="w-full h-auto rounded-lg base-image">
-                <img src="./static/videos/TwinVLA_thmb.gif" class="w-full h-auto absolute top-0 left-0 opacity-0 hover-image rounded-lg">
+            <div class="video-hover-container relative">
+                <img src="./static/videos/TwinVLA_thmb.png" class="w-full h-auto rounded-lg base-image shadow-sm">
+                <img src="./static/videos/TwinVLA_thmb.gif" class="w-full h-auto absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg">
             </div>
             <div class="flex flex-col gap-3">
-                <h3 class="text-xl font-semibold text-cyan-700">TwinVLA: Data-Efficient Bimanual Policy through Twin Single-Arm Vision-Language-Action Models</h3>
-                <p class="text-sm text-slate-700">
-                    <span class="font-semibold text-slate-900">Hokyun Im</span> • Euijin Jeong • Jianlong Fu • Andrey Kolobov • Youngwoon Lee
-                </p>
-                <div class="flex flex-wrap gap-2">
-                    <a href="" target="_blank" class="px-3 py-1.5 text-sm rounded-lg bg-white/70 hover:bg-white text-slate-700 border border-slate-300 hover:border-cyan-500 transition-all">Code</a>
-                    <a href="https://arxiv.org/abs/2511.05275" target="_blank" class="px-3 py-1.5 text-sm rounded-lg bg-red-600 hover:bg-red-500 text-white border border-red-500 transition-all">Paper</a> 
-                    <a href="https://jellyho.github.io/TwinVLA/" target="_blank" class="px-3 py-1.5 text-sm rounded-lg bg-white/70 hover:bg-white text-slate-700 border border-slate-300 hover:border-cyan-500 transition-all">Project page</a> 
+                <div class="flex items-start justify-between flex-wrap gap-2">
+                    <h3 class="text-xl font-semibold text-cyan-700 group-hover:text-cyan-600 transition-colors">TwinVLA: Data-Efficient Bimanual Policy through Twin Single-Arm Vision-Language-Action Models</h3>
+                    <span class="px-2 py-1 text-xs font-bold tracking-wider text-white bg-gradient-to-r from-cyan-600 to-blue-600 rounded-md shadow-sm">ICLR 2026</span>
                 </div>
                 <p class="text-sm text-slate-700">
-                    <span class="font-semibold text-slate-900">Preprint
+                    <span class="font-semibold text-slate-900 underline decoration-cyan-500/30">Hokyun Im</span> • Euijin Jeong • Jianlong Fu • Andrey Kolobov • Youngwoon Lee
                 </p>
-                <p class="text-sm text-slate-600 mt-2">We introduce TwinVLA, a vision-language-action (VLA) model for bimanual manipulation that fusing pretrained single-arm VLA models. This design reduces reliance on scarce bimanual data while achieving comparable performance.</p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="https://arxiv.org/abs/2511.05275" target="_blank" class="px-3 py-1.5 text-sm rounded-lg bg-red-600 hover:bg-red-500 text-white border border-red-500 transition-all flex items-center gap-1">
+                        <span>Paper</span>
+                    </a> 
+                    <a href="https://jellyho.github.io/TwinVLA/" target="_blank" class="px-3 py-1.5 text-sm rounded-lg bg-white/70 hover:bg-white text-slate-700 border border-slate-300 hover:border-cyan-500 transition-all">Project page</a> 
+                    <a href="" target="_blank" class="px-3 py-1.5 text-sm rounded-lg bg-white/70 hover:bg-white text-slate-700 border border-slate-300 hover:border-cyan-500 transition-all">Code</a>
+                </div>
+                <p class="text-sm text-slate-600 mt-2">We introduce TwinVLA, a vision-language-action (VLA) model for bimanual manipulation that fuses pretrained single-arm VLA models. This design reduces reliance on scarce bimanual data while achieving comparable performance.</p>
             </div>
         </div>
     </div>
 
     <div class="section-divider"></div>
 
-    <!-- Projects Section -->
     <h2 class="text-4xl font-bold mb-8 gradient-text">Projects</h2>
 
     <div class="glass-card w-full rounded-2xl overflow-hidden mb-4 group">
         <div class="grid md:grid-cols-[180px_1fr] gap-6 p-6">
-            <div class="video-hover-container">
-                <img src="./static/videos/crossformer.gif" class="w-full h-auto absolute top-0 left-0 opacity-0 hover-image rounded-lg">
+            <div class="video-hover-container relative">
                 <img src="./static/videos/crossformer.png" class="w-full h-auto rounded-lg base-image">
+                <img src="./static/videos/crossformer.gif" class="w-full h-auto absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg">
             </div>
             <div class="flex flex-col gap-3">
-                <h3 class="text-xl font-semibold text-cyan-700">End-to-End Visual Indoor Drone Navigation with Foundation Model</h3>
+                <h3 class="text-xl font-semibold text-cyan-700 group-hover:text-cyan-600 transition-colors">End-to-End Visual Indoor Drone Navigation with Foundation Model</h3>
                 <p class="text-sm text-slate-700">
                     <span class="font-semibold">Project Lead, Yonsei Drone (2024)</span> 
                 </p>
@@ -368,12 +358,12 @@
 
     <div class="glass-card w-full rounded-2xl overflow-hidden mb-8 group">
         <div class="grid md:grid-cols-[180px_1fr] gap-6 p-6">
-            <div class="video-hover-container">
+            <div class="video-hover-container relative">
                 <img src="./static/videos/krac2023.png" class="w-full h-auto rounded-lg base-image">
-                <img src="./static/videos/krac2023.gif" class="w-full h-auto absolute top-0 left-0 opacity-0 hover-image rounded-lg">
+                <img src="./static/videos/krac2023.gif" class="w-full h-auto absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg">
             </div>
             <div class="flex flex-col gap-3">
-                <h3 class="text-xl font-semibold text-cyan-700">Autonomous Drone for Food Delivery <span class="text-red-600">(KRAC 2023 2nd Place)</span></h3>
+                <h3 class="text-xl font-semibold text-cyan-700 group-hover:text-cyan-600 transition-colors">Autonomous Drone for Food Delivery <span class="text-red-600">(KRAC 2023 2nd Place)</span></h3>
                 <p class="text-sm text-slate-700">
                     <span class="font-semibold">Yonsei Drone (2023)</span> 
                 </p>
@@ -389,7 +379,6 @@
 
     <div class="section-divider"></div>
 
-    <!-- Other Projects Section -->
     <h2 class="text-4xl font-bold mb-8 gradient-text">Other Projects & Activities</h2>
 
     <div class="flex items-center w-full mb-6">
@@ -481,10 +470,6 @@
     </div>
 
 </div>
-
-<script>
-// No longer needed - hover effect now handled by CSS on card hover
-</script>
 
 </body>
 </html>

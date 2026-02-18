@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <title>Hokyun Im</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:type" content="website">
     <meta property="og:image" content="./static/title.png">
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <link rel="shortcut icon" href="./static/favicon.ico">
     <meta property="og:title" content="Hokyun Im">
 
@@ -33,6 +36,7 @@
             -moz-osx-font-smoothing: grayscale;
             line-height: 1.6;
         }
+
         /* Animated Wave Background */
         .wave-animation {
             position: fixed;
@@ -80,12 +84,18 @@
             0% {
                 transform: translateX(0);
             }
+
             100% {
                 transform: translateX(-50%);
             }
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 600;
             letter-spacing: -0.02em;
@@ -131,8 +141,13 @@
         }
 
         @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .btn-modern {
@@ -166,7 +181,7 @@
 
         .video-hover-container {
             /* relative는 Tailwind 클래스로 이동하거나 여기서 유지 */
-            position: relative; 
+            position: relative;
             overflow: hidden;
             border-radius: 0.75rem;
         }
@@ -229,12 +244,16 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
+
+            *,
+            *::before,
+            *::after {
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
         }
+
         @media (prefers-reduced-motion: reduce) {
             .wave {
                 animation: none !important;
@@ -242,238 +261,355 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="wave-animation">
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
-</div>
-
-<div class="max-w-6xl w-full px-6 pt-16 pb-32 flex flex-col items-start mx-auto relative z-10">
-    
-    <div class="grid md:grid-cols-[240px_1fr] gap-8 w-full mb-12">
-        <div class="profile-image rounded-xl overflow-hidden shadow-2xl">
-            <img class="w-full h-full object-cover" src="./static/me.jpg" alt="Hokyun Im Profile Picture">
-        </div>
-        
-        <div class="flex flex-col justify-center gap-6">
-            <div>
-                <h1 class="text-6xl font-bold mb-2 gradient-text">Hokyun Im</h1>
-                <!-- <p class="text-lg font-medium text-slate-500">AI Researcher & Roboticist</p> -->
-            </div>
-            
-            <div class="flex flex-col gap-4 text-slate-700 leading-relaxed">
-                <p>I am an MS/Ph.D student majoring in <span class="text-cyan-700 font-medium">Artificial Intelligence</span> at Yonsei University, advised by Prof. <a href="https://youngwoon.github.io/" class="link-hover text-cyan-700 hover:text-cyan-600">Youngwoon Lee</a>.</p>
-    
-                <p>My research focuses on the intersection of <span class="text-amber-700 font-medium">Robotics and AI</span>. I am particularly interested in building intelligent agents that can reason and make decisions in the real world by leveraging <span class="text-orange-700 font-medium">Foundation Models and Reinforcement Learning</span>.</p>
-    
-                <p class="text-slate-600 text-sm">
-                    Previously: Research intern at <span class="font-medium text-slate-700">Microsoft Research Asia (MSRA)</span>, MLCS Lab (Prof. Jongeun Choi), and <a href="https://clvrai.com" class="link-hover text-cyan-600 hover:text-cyan-500">CLVR Lab</a> (Prof. <a href="https://clvrai.com/web_lim/" class="link-hover text-cyan-600 hover:text-cyan-500">Joseph J. Lim</a>).
-                </p>
-            </div>
-        </div>
-    </div>
-    
-    <div class="flex flex-wrap gap-3 mb-16">
-        <a href="https://github.com/jellyho" target="_blank" class="btn-modern flex items-center gap-2 px-4 py-2.5 bg-white/70 hover:bg-white text-slate-700 hover:text-slate-900 rounded-lg text-sm border border-slate-300 hover:border-cyan-500">
-            <span class="flex items-center gap-2">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                GitHub
-            </span>
-        </a>
-        <a href="https://x.com/_jellyho_" target="_blank" class="btn-modern flex items-center gap-2 px-4 py-2.5 bg-white/70 hover:bg-white text-slate-700 hover:text-slate-900 rounded-lg text-sm border border-slate-300 hover:border-cyan-500">
-            <span class="flex items-center gap-2">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                X
-            </span>
-        </a>
-        <a href="https://www.linkedin.com/in/hokyun-im-361bab28a/" target="_blank" class="btn-modern flex items-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-sm border border-blue-500 hover:border-blue-400">
-            <span class="flex items-center gap-2">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                LinkedIn
-            </span>
-        </a>
-        <a href="static/CV_HK.pdf" target="_blank" class="btn-modern flex items-center gap-2 px-4 py-2.5 bg-white/70 hover:bg-white text-slate-700 hover:text-slate-900 rounded-lg text-sm border border-slate-300 hover:border-cyan-500">
-            <span class="flex items-center gap-2">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                CV
-            </span>
-        </a>
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
     </div>
 
-    <div class="section-divider"></div>
+    <div class="max-w-6xl w-full px-6 pt-16 pb-32 flex flex-col items-start mx-auto relative z-10">
 
-    <h2 class="text-4xl font-bold mb-8 gradient-text">Publications</h2>
-    
-    <div class="glass-card w-full rounded-2xl overflow-hidden mb-8 group">
-        <div class="grid md:grid-cols-[180px_1fr] gap-6 p-6">
-            <div class="video-hover-container relative">
-                <img src="./static/videos/TwinVLA_thmb.png" class="w-full h-auto rounded-lg base-image shadow-sm">
-                <img src="./static/videos/TwinVLA_thmb.gif" class="w-full h-auto absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg">
+        <div class="grid md:grid-cols-[240px_1fr] gap-8 w-full mb-12">
+            <div class="profile-image rounded-xl overflow-hidden shadow-2xl">
+                <img class="w-full h-full object-cover" src="./static/me.jpg" alt="Hokyun Im Profile Picture">
             </div>
-            <div class="flex flex-col gap-3">
-                <div class="flex items-start justify-between flex-wrap gap-2">
-                    <h3 class="text-xl font-semibold text-cyan-700 group-hover:text-cyan-600 transition-colors">TwinVLA: Data-Efficient Bimanual Policy through Twin Single-Arm Vision-Language-Action Models</h3>
-                    <span class="px-2 py-1 text-xs font-bold tracking-wider text-white bg-gradient-to-r from-cyan-600 to-blue-600 rounded-md shadow-sm">ICLR 2026</span>
+
+            <div class="flex flex-col justify-center gap-6">
+                <div>
+                    <h1 class="text-6xl font-bold mb-2 gradient-text">Hokyun Im</h1>
+                    <!-- <p class="text-lg font-medium text-slate-500">AI Researcher & Roboticist</p> -->
                 </div>
-                <p class="text-sm text-slate-700">
-                    <span class="font-semibold text-slate-900 underline decoration-cyan-500/30">Hokyun Im</span> • 
-                    <a href="https://jinprelude.github.io/" target="_blank" class="link-hover hover:text-cyan-600 transition-colors">Euijin Jeong</a> • 
-                    <a href="https://www.microsoft.com/en-us/research/people/akolobov/" target="_blank" class="link-hover hover:text-cyan-600 transition-colors">Andrey Kolobov</a> • 
-                    <a href="https://www.microsoft.com/en-us/research/people/jianf/" target="_blank" class="link-hover hover:text-cyan-600 transition-colors">Jianlong Fu</a> • 
-                    <a href="https://youngwoon.github.io/" target="_blank" class="link-hover hover:text-cyan-600 transition-colors">Youngwoon Lee</a>
-                </p>
-                <div class="flex flex-wrap gap-2">
-                    <a href="https://arxiv.org/abs/2511.05275" target="_blank" class="px-3 py-1.5 text-sm rounded-lg bg-red-600 hover:bg-red-500 text-white border border-red-500 transition-all flex items-center gap-1">
-                        <span>Paper</span>
-                    </a> 
-                    <a href="https://jellyho.github.io/TwinVLA/" target="_blank" class="px-3 py-1.5 text-sm rounded-lg bg-white/70 hover:bg-white text-slate-700 border border-slate-300 hover:border-cyan-500 transition-all">Project page</a> 
-                    <a href="" target="_blank" class="px-3 py-1.5 text-sm rounded-lg bg-white/70 hover:bg-white text-slate-700 border border-slate-300 hover:border-cyan-500 transition-all">Code</a>
+
+                <div class="flex flex-col gap-4 text-slate-700 leading-relaxed">
+                    <p>I am an MS/Ph.D student majoring in <span class="text-cyan-700 font-medium">Artificial
+                            Intelligence</span> at Yonsei University, advised by Prof. <a
+                            href="https://youngwoon.github.io/"
+                            class="link-hover text-cyan-700 hover:text-cyan-600">Youngwoon Lee</a>.</p>
+
+                    <p>My research focuses on the intersection of <span class="text-amber-700 font-medium">Robotics and
+                            AI</span>. I am particularly interested in building intelligent agents that can reason and
+                        make decisions in the real world by leveraging <span
+                            class="text-orange-700 font-medium">Foundation Models and Reinforcement Learning</span>.</p>
+
+                    <p class="text-slate-600 text-sm">
+                        Previously: Research intern at <span class="font-medium text-slate-700">Microsoft Research Asia
+                            (MSRA)</span>, MLCS Lab (Prof. Jongeun Choi), and <a href="https://clvrai.com"
+                            class="link-hover text-cyan-600 hover:text-cyan-500">CLVR Lab</a> (Prof. <a
+                            href="https://clvrai.com/web_lim/"
+                            class="link-hover text-cyan-600 hover:text-cyan-500">Joseph J. Lim</a>).
+                    </p>
                 </div>
-                <p class="text-sm text-slate-600 mt-2">We introduce TwinVLA, a vision-language-action (VLA) model for bimanual manipulation that fuses pretrained single-arm VLA models. This design reduces reliance on scarce bimanual data while achieving comparable performance.</p>
             </div>
         </div>
-    </div>
 
-    <div class="section-divider"></div>
-
-    <h2 class="text-4xl font-bold mb-8 gradient-text">Projects</h2>
-
-    <div class="glass-card w-full rounded-2xl overflow-hidden mb-4 group">
-        <div class="grid md:grid-cols-[180px_1fr] gap-6 p-6">
-            <div class="video-hover-container relative">
-                <img src="./static/videos/crossformer.png" class="w-full h-auto rounded-lg base-image">
-                <img src="./static/videos/crossformer.gif" class="w-full h-auto absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg">
-            </div>
-            <div class="flex flex-col gap-3">
-                <h3 class="text-xl font-semibold text-cyan-700 group-hover:text-cyan-600 transition-colors">End-to-End Visual Indoor Drone Navigation with Foundation Model</h3>
-                <p class="text-sm text-slate-700">
-                    <span class="font-semibold">Project Lead, Yonsei Drone (2024)</span> 
-                </p>
-                <div class="flex flex-wrap gap-2">
-                    <a href="https://github.com/YonseiDrone/crossformer-ysdrone/tree/main" target="_blank" class="px-3 py-1.5 text-sm rounded-lg bg-white/70 hover:bg-white text-slate-700 border border-slate-300 hover:border-cyan-500 transition-all">Code</a>
-                    <a href="https://youtu.be/S5myDyUQ-C0" target="_blank" class="px-3 py-1.5 text-sm rounded-lg bg-red-600 hover:bg-red-500 text-white border border-red-500 transition-all">Video</a> 
-                </div>
-                <p class="text-sm text-slate-600 mt-2">Previously, distance-sensing sensors such as depth cameras were necessary for drone navigation. With the advancement of foundation models, we successfully accomplished indoor navigation using only a front-facing RGB image by leveraging the CrossFormer model.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="glass-card w-full rounded-2xl overflow-hidden mb-8 group">
-        <div class="grid md:grid-cols-[180px_1fr] gap-6 p-6">
-            <div class="video-hover-container relative">
-                <img src="./static/videos/krac2023.png" class="w-full h-auto rounded-lg base-image">
-                <img src="./static/videos/krac2023.gif" class="w-full h-auto absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg">
-            </div>
-            <div class="flex flex-col gap-3">
-                <h3 class="text-xl font-semibold text-cyan-700 group-hover:text-cyan-600 transition-colors">Autonomous Outdoor Drone Navigation<span class="text-red-600">(KRAC 2023 2nd Place)</span></h3>
-                <p class="text-sm text-slate-700">
-                    <span class="font-semibold">Yonsei Drone (2023)</span> 
-                </p>
-                <div class="flex flex-wrap gap-2">
-                    <a href="https://github.com/YonseiDrone/ysdrone_koreauav2023" target="_blank" class="px-3 py-1.5 text-sm rounded-lg bg-white/70 hover:bg-white text-slate-700 border border-slate-300 hover:border-cyan-500 transition-all">Code</a>
-                    <a href="https://www.youtube.com/watch?v=wF8rKyWoi74" target="_blank" class="px-3 py-1.5 text-sm rounded-lg bg-red-600 hover:bg-red-500 text-white border border-red-500 transition-all">Video</a> 
-                </div>
-                <p class="text-sm text-slate-600 mt-2">Fully autonomous outdoor drone navigation using GPS to travel long distances, avoid obstacles, reach the destination to deliver items, and return safely.</p>
-                <p class="text-sm text-slate-600">I led the development of building approach algorithms, and worked on safe landing using Sim2Real RL.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="section-divider"></div>
-
-    <h2 class="text-4xl font-bold mb-8 gradient-text">Other Projects & Activities</h2>
-
-    <div class="flex items-center w-full mb-6">
-        <div class="grow h-px bg-gradient-to-r from-transparent via-cyan-600/30 to-transparent"></div>
-        <div class="shrink px-4 text-sm text-slate-500 font-medium">Graduate</div>
-        <div class="grow h-px bg-gradient-to-r from-transparent via-cyan-600/30 to-transparent"></div>
-    </div>
-
-    <div class="w-full grid md:grid-cols-2 gap-6 mb-8">
-        <div class="flex gap-4 p-4 glass-card rounded-xl">
-            <a href="https://github.com/jellyho/Tabletop-Sim" class="flex-shrink-0">
-                <div class="project-icon-wrapper w-24 h-24 rounded-xl flex justify-center items-center">
-                    <img src="./static/icons/tabletop.png" alt="Tabletop Sim" class="w-full h-full object-contain">
-                </div>
+        <div class="flex flex-wrap gap-3 mb-16">
+            <a href="https://github.com/jellyho" target="_blank"
+                class="btn-modern flex items-center gap-2 px-4 py-2.5 bg-white/70 hover:bg-white text-slate-700 hover:text-slate-900 rounded-lg text-sm border border-slate-300 hover:border-cyan-500">
+                <span class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    GitHub
+                </span>
             </a>
-            <div class="flex flex-col justify-center">
-                <a href="https://github.com/jellyho/Tabletop-Sim" class="text-lg font-semibold text-cyan-700 hover:text-cyan-600 link-hover mb-1">Tabletop Simulation</a>
-                <p class="text-sm text-slate-600"><span class="italic">dm_control</span> based bimanual tabletop simulation / dataset for testing bimanual robot policy.</p>
+            <a href="https://x.com/_jellyho_" target="_blank"
+                class="btn-modern flex items-center gap-2 px-4 py-2.5 bg-white/70 hover:bg-white text-slate-700 hover:text-slate-900 rounded-lg text-sm border border-slate-300 hover:border-cyan-500">
+                <span class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                    X
+                </span>
+            </a>
+            <a href="https://www.linkedin.com/in/hokyun-im-361bab28a/" target="_blank"
+                class="btn-modern flex items-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-sm border border-blue-500 hover:border-blue-400">
+                <span class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                    LinkedIn
+                </span>
+            </a>
+            <a href="static/CV_HK.pdf" target="_blank"
+                class="btn-modern flex items-center gap-2 px-4 py-2.5 bg-white/70 hover:bg-white text-slate-700 hover:text-slate-900 rounded-lg text-sm border border-slate-300 hover:border-cyan-500">
+                <span class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    CV
+                </span>
+            </a>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="text-4xl font-bold mb-8 gradient-text">Publications</h2>
+
+        <div class="glass-card w-full rounded-2xl overflow-hidden mb-8 group">
+            <div class="grid md:grid-cols-[180px_1fr] gap-6 p-6">
+                <div class="video-hover-container relative">
+                    <img src="./static/videos/LPS_thumb.png" class="w-full h-auto rounded-lg base-image shadow-sm">
+                    <img src="./static/videos/LPS.gif"
+                        class="w-full h-auto absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg">
+                </div>
+                <div class="flex flex-col gap-3">
+                    <div class="flex items-start justify-between flex-wrap gap-2">
+                        <h3 class="text-xl font-semibold text-cyan-700 group-hover:text-cyan-600 transition-colors">
+                            Latent Policy Steering through One-Step Flow Policies</h3>
+                    </div>
+                    <div class="flex items-start justify-between flex-wrap gap-2">
+                        <span
+                            class="px-2 py-1 text-xs font-bold tracking-wider text-white bg-gradient-to-r from-red-600 to-gray-600 rounded-md shadow-sm">Preprint</span>
+                    </div>
+                    <p class="text-sm text-slate-700">
+                        <span class="font-semibold text-slate-900 underline decoration-cyan-500/30">Hokyun Im</span> •
+                        <a href="https://www.microsoft.com/en-us/research/people/akolobov/" target="_blank"
+                            class="link-hover hover:text-cyan-600 transition-colors">Andrey Kolobov</a> •
+                        <a href="https://www.microsoft.com/en-us/research/people/jianf/" target="_blank"
+                            class="link-hover hover:text-cyan-600 transition-colors">Jianlong Fu</a> •
+                        <a href="https://youngwoon.github.io/" target="_blank"
+                            class="link-hover hover:text-cyan-600 transition-colors">Youngwoon Lee</a>
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="" target="_blank"
+                            class="px-3 py-1.5 text-sm rounded-lg bg-red-600 hover:bg-red-500 text-white border border-red-500 transition-all flex items-center gap-1">
+                            <span>Paper</span>
+                        </a>
+                        <a href="" target="_blank"
+                            class="px-3 py-1.5 text-sm rounded-lg bg-white/70 hover:bg-white text-slate-700 border border-slate-300 hover:border-cyan-500 transition-all">Project
+                            page</a>
+                        <a href="" target="_blank"
+                            class="px-3 py-1.5 text-sm rounded-lg bg-white/70 hover:bg-white text-slate-700 border border-slate-300 hover:border-cyan-500 transition-all">Code</a>
+                    </div>
+                    <p class="text-sm text-slate-600 mt-2">We introduce Latent Policy Steering (LPS), a method that
+                        enables high-fidelity policy improvement by backpropagating original-action-space Q-gradients
+                        through a differentiable one-step MeanFlow policy to optimize a latent actor. By eliminating
+                        proxy latent critics and using the MeanFlow policy as a behavior-constrained generative prior,
+                        LPS achieves robust, state-of-the-art performance in offline RL with minimal tuning.</p>
+                </div>
             </div>
         </div>
+
+        <div class="glass-card w-full rounded-2xl overflow-hidden mb-8 group">
+            <div class="grid md:grid-cols-[180px_1fr] gap-6 p-6">
+                <div class="video-hover-container relative">
+                    <img src="./static/videos/TwinVLA_thmb.png" class="w-full h-auto rounded-lg base-image shadow-sm">
+                    <img src="./static/videos/TwinVLA_thmb.gif"
+                        class="w-full h-auto absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg">
+                </div>
+                <div class="flex flex-col gap-3">
+                    <div class="flex items-start justify-between flex-wrap gap-2">
+                        <h3 class="text-xl font-semibold text-cyan-700 group-hover:text-cyan-600 transition-colors">
+                            TwinVLA: Data-Efficient Bimanual Policy through Twin Single-Arm Vision-Language-Action
+                            Models</h3>
+                    </div>
+                    <div class="flex items-start justify-between flex-wrap gap-2">
+                        <span
+                            class="px-2 py-1 text-xs font-bold tracking-wider text-white bg-gradient-to-r from-cyan-600 to-blue-600 rounded-md shadow-sm">ICLR
+                            2026</span>
+                    </div>
+                    <p class="text-sm text-slate-700">
+                        <span class="font-semibold text-slate-900 underline decoration-cyan-500/30">Hokyun Im</span> •
+                        <a href="https://jinprelude.github.io/" target="_blank"
+                            class="link-hover hover:text-cyan-600 transition-colors">Euijin Jeong</a> •
+                        <a href="https://www.microsoft.com/en-us/research/people/akolobov/" target="_blank"
+                            class="link-hover hover:text-cyan-600 transition-colors">Andrey Kolobov</a> •
+                        <a href="https://www.microsoft.com/en-us/research/people/jianf/" target="_blank"
+                            class="link-hover hover:text-cyan-600 transition-colors">Jianlong Fu</a> •
+                        <a href="https://youngwoon.github.io/" target="_blank"
+                            class="link-hover hover:text-cyan-600 transition-colors">Youngwoon Lee</a>
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://arxiv.org/abs/2511.05275" target="_blank"
+                            class="px-3 py-1.5 text-sm rounded-lg bg-red-600 hover:bg-red-500 text-white border border-red-500 transition-all flex items-center gap-1">
+                            <span>Paper</span>
+                        </a>
+                        <a href="https://jellyho.github.io/TwinVLA/" target="_blank"
+                            class="px-3 py-1.5 text-sm rounded-lg bg-white/70 hover:bg-white text-slate-700 border border-slate-300 hover:border-cyan-500 transition-all">Project
+                            page</a>
+                        <a href="" target="_blank"
+                            class="px-3 py-1.5 text-sm rounded-lg bg-white/70 hover:bg-white text-slate-700 border border-slate-300 hover:border-cyan-500 transition-all">Code</a>
+                    </div>
+                    <p class="text-sm text-slate-600 mt-2">We introduce TwinVLA, a vision-language-action (VLA) model
+                        for bimanual manipulation that fuses pretrained single-arm VLA models. This design reduces
+                        reliance on scarce bimanual data while achieving comparable performance.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="text-4xl font-bold mb-8 gradient-text">Projects</h2>
+
+        <div class="glass-card w-full rounded-2xl overflow-hidden mb-4 group">
+            <div class="grid md:grid-cols-[180px_1fr] gap-6 p-6">
+                <div class="video-hover-container relative">
+                    <img src="./static/videos/crossformer.png" class="w-full h-auto rounded-lg base-image">
+                    <img src="./static/videos/crossformer.gif"
+                        class="w-full h-auto absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg">
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-xl font-semibold text-cyan-700 group-hover:text-cyan-600 transition-colors">
+                        End-to-End Visual Indoor Drone Navigation with Foundation Model</h3>
+                    <p class="text-sm text-slate-700">
+                        <span class="font-semibold">Project Lead, Yonsei Drone (2024)</span>
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://github.com/YonseiDrone/crossformer-ysdrone/tree/main" target="_blank"
+                            class="px-3 py-1.5 text-sm rounded-lg bg-white/70 hover:bg-white text-slate-700 border border-slate-300 hover:border-cyan-500 transition-all">Code</a>
+                        <a href="https://youtu.be/S5myDyUQ-C0" target="_blank"
+                            class="px-3 py-1.5 text-sm rounded-lg bg-red-600 hover:bg-red-500 text-white border border-red-500 transition-all">Video</a>
+                    </div>
+                    <p class="text-sm text-slate-600 mt-2">Previously, distance-sensing sensors such as depth cameras
+                        were necessary for drone navigation. With the advancement of foundation models, we successfully
+                        accomplished indoor navigation using only a front-facing RGB image by leveraging the CrossFormer
+                        model.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-card w-full rounded-2xl overflow-hidden mb-8 group">
+            <div class="grid md:grid-cols-[180px_1fr] gap-6 p-6">
+                <div class="video-hover-container relative">
+                    <img src="./static/videos/krac2023.png" class="w-full h-auto rounded-lg base-image">
+                    <img src="./static/videos/krac2023.gif"
+                        class="w-full h-auto absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg">
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-xl font-semibold text-cyan-700 group-hover:text-cyan-600 transition-colors">
+                        Autonomous Outdoor Drone Navigation<span class="text-red-600">(KRAC 2023 2nd Place)</span></h3>
+                    <p class="text-sm text-slate-700">
+                        <span class="font-semibold">Yonsei Drone (2023)</span>
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://github.com/YonseiDrone/ysdrone_koreauav2023" target="_blank"
+                            class="px-3 py-1.5 text-sm rounded-lg bg-white/70 hover:bg-white text-slate-700 border border-slate-300 hover:border-cyan-500 transition-all">Code</a>
+                        <a href="https://www.youtube.com/watch?v=wF8rKyWoi74" target="_blank"
+                            class="px-3 py-1.5 text-sm rounded-lg bg-red-600 hover:bg-red-500 text-white border border-red-500 transition-all">Video</a>
+                    </div>
+                    <p class="text-sm text-slate-600 mt-2">Fully autonomous outdoor drone navigation using GPS to travel
+                        long distances, avoid obstacles, reach the destination to deliver items, and return safely.</p>
+                    <p class="text-sm text-slate-600">I led the development of building approach algorithms, and worked
+                        on safe landing using Sim2Real RL.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="text-4xl font-bold mb-8 gradient-text">Other Projects & Activities</h2>
+
+        <div class="flex items-center w-full mb-6">
+            <div class="grow h-px bg-gradient-to-r from-transparent via-cyan-600/30 to-transparent"></div>
+            <div class="shrink px-4 text-sm text-slate-500 font-medium">Graduate</div>
+            <div class="grow h-px bg-gradient-to-r from-transparent via-cyan-600/30 to-transparent"></div>
+        </div>
+
+        <div class="w-full grid md:grid-cols-2 gap-6 mb-8">
+            <div class="flex gap-4 p-4 glass-card rounded-xl">
+                <a href="https://github.com/jellyho/Tabletop-Sim" class="flex-shrink-0">
+                    <div class="project-icon-wrapper w-24 h-24 rounded-xl flex justify-center items-center">
+                        <img src="./static/icons/tabletop.png" alt="Tabletop Sim" class="w-full h-full object-contain">
+                    </div>
+                </a>
+                <div class="flex flex-col justify-center">
+                    <a href="https://github.com/jellyho/Tabletop-Sim"
+                        class="text-lg font-semibold text-cyan-700 hover:text-cyan-600 link-hover mb-1">Tabletop
+                        Simulation</a>
+                    <p class="text-sm text-slate-600"><span class="italic">dm_control</span> based bimanual tabletop
+                        simulation / dataset for testing bimanual robot policy.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex items-center w-full mb-6">
+            <div class="grow h-px bg-gradient-to-r from-transparent via-cyan-600/30 to-transparent"></div>
+            <div class="shrink px-4 text-sm text-slate-500 font-medium">Undergraduate</div>
+            <div class="grow h-px bg-gradient-to-r from-transparent via-cyan-600/30 to-transparent"></div>
+        </div>
+
+        <div class="w-full grid md:grid-cols-2 gap-6">
+            <div class="flex gap-4 p-4 glass-card rounded-xl">
+                <a href="https://www.yonseidrone.com" class="flex-shrink-0">
+                    <div class="project-icon-wrapper w-24 h-24 rounded-xl flex justify-center items-center">
+                        <img src="./static/icons/ysdrone.png" alt="Yonsei Drone" class="w-full h-full object-contain">
+                    </div>
+                </a>
+                <div class="flex flex-col justify-center">
+                    <a href="https://www.yonseidrone.com"
+                        class="text-lg font-semibold text-cyan-700 hover:text-cyan-600 link-hover mb-1">Yonsei Drone</a>
+                    <p class="text-sm text-slate-600">A student-led drone research society. I served as the 4th
+                        president.</p>
+                </div>
+            </div>
+
+            <div class="flex gap-4 p-4 glass-card rounded-xl">
+                <a href="https://linktr.ee/yonsei.ai" class="flex-shrink-0">
+                    <div class="project-icon-wrapper w-24 h-24 rounded-xl flex justify-center items-center">
+                        <img src="./static/icons/yai.webp" alt="YAI" class="w-full h-full object-contain">
+                    </div>
+                </a>
+                <div class="flex flex-col justify-center">
+                    <a href="https://linktr.ee/yonsei.ai"
+                        class="text-lg font-semibold text-cyan-700 hover:text-cyan-600 link-hover mb-1">YAI</a>
+                    <p class="text-sm text-slate-600">The leading academic society for AI at Yonsei University. I was a
+                        11th member.</p>
+                </div>
+            </div>
+
+            <div class="flex gap-4 p-4 glass-card rounded-xl">
+                <a href="https://jellyho.github.io/TensorflowJsProject/" class="flex-shrink-0">
+                    <div class="project-icon-wrapper w-24 h-24 rounded-xl flex justify-center items-center">
+                        <img src="./static/icons/tfjs.png" alt="TensorFlow.js" class="w-full h-full object-contain">
+                    </div>
+                </a>
+                <div class="flex flex-col justify-center">
+                    <a href="https://jellyho.github.io/TensorflowJsProject/"
+                        class="text-lg font-semibold text-cyan-700 hover:text-cyan-600 link-hover mb-1">VAE
+                        Visualization</a>
+                    <p class="text-sm text-slate-600">A toy project that allows interactive, real-time manipulation of
+                        the latent representation of a VAE on a webpage. Implemented using TensorFlow.js.</p>
+                </div>
+            </div>
+
+            <div class="flex gap-4 p-4 glass-card rounded-xl">
+                <a href="https://jellyho.github.io/Html-Games/" class="flex-shrink-0">
+                    <div class="project-icon-wrapper w-24 h-24 rounded-xl flex justify-center items-center">
+                        <img src="./static/icons/html.png" alt="HTML Games" class="w-full h-full object-contain">
+                    </div>
+                </a>
+                <div class="flex flex-col justify-center">
+                    <a href="https://jellyho.github.io/Html-Games/"
+                        class="text-lg font-semibold text-cyan-700 hover:text-cyan-600 link-hover mb-1">HTML Games</a>
+                    <p class="text-sm text-slate-600">HTML games developed in JavaScript during spare time in the
+                        military. Quite fun to play haha.</p>
+                </div>
+            </div>
+
+            <div class="flex gap-4 p-4 glass-card rounded-xl">
+                <a href="https://github.com/jellyho/PID-Pendulum-Demo" class="flex-shrink-0">
+                    <div class="project-icon-wrapper w-24 h-24 rounded-xl flex justify-center items-center">
+                        <img src="./static/icons/pid.png" alt="PID Pendulum" class="w-full h-full object-contain">
+                    </div>
+                </a>
+                <div class="flex flex-col justify-center">
+                    <a href="https://github.com/jellyho/PID-Pendulum-Demo"
+                        class="text-lg font-semibold text-cyan-700 hover:text-cyan-600 link-hover mb-1">PID Pendulum</a>
+                    <p class="text-sm text-slate-600">A simple pendulum simulator designed as an educational tool. It
+                        allows students to explore and understand the principles of PID control.</p>
+                </div>
+            </div>
+        </div>
+
     </div>
-    
-    <div class="flex items-center w-full mb-6">
-        <div class="grow h-px bg-gradient-to-r from-transparent via-cyan-600/30 to-transparent"></div>
-        <div class="shrink px-4 text-sm text-slate-500 font-medium">Undergraduate</div>
-        <div class="grow h-px bg-gradient-to-r from-transparent via-cyan-600/30 to-transparent"></div>
-    </div>
-    
-    <div class="w-full grid md:grid-cols-2 gap-6">
-        <div class="flex gap-4 p-4 glass-card rounded-xl">
-            <a href="https://www.yonseidrone.com" class="flex-shrink-0">
-                <div class="project-icon-wrapper w-24 h-24 rounded-xl flex justify-center items-center">
-                    <img src="./static/icons/ysdrone.png" alt="Yonsei Drone" class="w-full h-full object-contain">
-                </div>
-            </a>
-            <div class="flex flex-col justify-center">
-                <a href="https://www.yonseidrone.com" class="text-lg font-semibold text-cyan-700 hover:text-cyan-600 link-hover mb-1">Yonsei Drone</a>
-                <p class="text-sm text-slate-600">A student-led drone research society. I served as the 4th president.</p>
-            </div>
-        </div>
-
-        <div class="flex gap-4 p-4 glass-card rounded-xl">
-            <a href="https://linktr.ee/yonsei.ai" class="flex-shrink-0">
-                <div class="project-icon-wrapper w-24 h-24 rounded-xl flex justify-center items-center">
-                    <img src="./static/icons/yai.webp" alt="YAI" class="w-full h-full object-contain">
-                </div>
-            </a>
-            <div class="flex flex-col justify-center">
-                <a href="https://linktr.ee/yonsei.ai" class="text-lg font-semibold text-cyan-700 hover:text-cyan-600 link-hover mb-1">YAI</a>
-                <p class="text-sm text-slate-600">The leading academic society for AI at Yonsei University. I was a 11th member.</p>
-            </div>
-        </div>
-
-        <div class="flex gap-4 p-4 glass-card rounded-xl">
-            <a href="https://jellyho.github.io/TensorflowJsProject/" class="flex-shrink-0">
-                <div class="project-icon-wrapper w-24 h-24 rounded-xl flex justify-center items-center">
-                    <img src="./static/icons/tfjs.png" alt="TensorFlow.js" class="w-full h-full object-contain">
-                </div>
-            </a>
-            <div class="flex flex-col justify-center">
-                <a href="https://jellyho.github.io/TensorflowJsProject/" class="text-lg font-semibold text-cyan-700 hover:text-cyan-600 link-hover mb-1">VAE Visualization</a>
-                <p class="text-sm text-slate-600">A toy project that allows interactive, real-time manipulation of the latent representation of a VAE on a webpage. Implemented using TensorFlow.js.</p>
-            </div>
-        </div>
-
-        <div class="flex gap-4 p-4 glass-card rounded-xl">
-            <a href="https://jellyho.github.io/Html-Games/" class="flex-shrink-0">
-                <div class="project-icon-wrapper w-24 h-24 rounded-xl flex justify-center items-center">
-                    <img src="./static/icons/html.png" alt="HTML Games" class="w-full h-full object-contain">
-                </div>
-            </a>
-            <div class="flex flex-col justify-center">
-                <a href="https://jellyho.github.io/Html-Games/" class="text-lg font-semibold text-cyan-700 hover:text-cyan-600 link-hover mb-1">HTML Games</a>
-                <p class="text-sm text-slate-600">HTML games developed in JavaScript during spare time in the military. Quite fun to play haha.</p>
-            </div>
-        </div>
-
-        <div class="flex gap-4 p-4 glass-card rounded-xl">
-            <a href="https://github.com/jellyho/PID-Pendulum-Demo" class="flex-shrink-0">
-                <div class="project-icon-wrapper w-24 h-24 rounded-xl flex justify-center items-center">
-                    <img src="./static/icons/pid.png" alt="PID Pendulum" class="w-full h-full object-contain">
-                </div>
-            </a>
-            <div class="flex flex-col justify-center">
-                <a href="https://github.com/jellyho/PID-Pendulum-Demo" class="text-lg font-semibold text-cyan-700 hover:text-cyan-600 link-hover mb-1">PID Pendulum</a>
-                <p class="text-sm text-slate-600">A simple pendulum simulator designed as an educational tool. It allows students to explore and understand the principles of PID control.</p>
-            </div>
-        </div>
-    </div>
-
-</div>
 
 </body>
+
 </html>
